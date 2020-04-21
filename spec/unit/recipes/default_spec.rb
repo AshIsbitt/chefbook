@@ -24,7 +24,7 @@ describe 'chefbook::default' do
 
     #3
     it 'should create a Downloads folder' do
-      expect(chef_run).to create_directory '/home/vagrant/Downloads'
+      expect(chef_run).to create_directory '/home/ubuntu/Downloads'
     end
 
     #4

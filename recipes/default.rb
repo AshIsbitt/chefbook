@@ -10,19 +10,26 @@ end
 
 package 'python3-pip'
 
-directory '/home/vagrant/Downloads' do
+bash 'install_java' do
+  code <<-EOH
+    sudo apt-get -y install default-jdk default-jre
+    EOH
+end
+
+
+directory '/home/ubuntu/Downloads' do
   owner 'root'
   group 'root'
   mode '0777'
   action :create
 end
 
-template '/home/vagrant/requirements.txt' do
+template '/home/ubuntu/requirements.txt' do
   source 'requirements.txt.erb'
 end
 
 bash 'pip install requirements.txt' do
   code <<-EOL
-  pip3 install -r /home/vagrant/requirements.txt
+  pip3 install -r /home/ubuntu/requirements.txt
   EOL
 end
