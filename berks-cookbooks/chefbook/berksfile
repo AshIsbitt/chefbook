@@ -1,0 +1,2 @@
+source 'https://supermarket.chef.io'
+cookbook "chefbook", git: "https://github.com/AshIsbitt/chefbook"
